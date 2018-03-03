@@ -220,7 +220,12 @@ a:hover {
 }
 
 .banner.inverted {
+    opacity: .15;
     color: white;
+}
+
+.banner.inverted:hover {
+    opacity: 1;
 }
 
 .banner.shaded.inverted {
@@ -237,7 +242,7 @@ a:hover {
     font-weight: 400;
 }
 
-.section:hover{
+.banner .section:hover{
     border-bottom: 2px solid black;
     opacity: 0.75;
 }
@@ -247,7 +252,34 @@ a:hover {
     opacity: 1;
 }
 
-.section.inverted:hover {
-    border-bottom: 2px solid black;
+.banner.inverted .section:hover {
+    border-bottom: 2px solid white;
     opacity: 0.75;
+}
+
+.card {
+    cursor: pointer;
+    height: 20em;
+    width: 12em;
+    background: white;
+    border-radius: 1em 1em 0 0;
+    border-bottom: 0px solid white;
+    transition: .3s;
+    bottom: -11em;
+    position: fixed;
+    z-index: 1;
+    padding: 1em;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    bottom: -7em;
+}
+
+.card.rotated-left {
+    transform: rotate(-10deg);
+}
+
+.card.rotated-right {
+    transform: rotate(10deg);
 }
