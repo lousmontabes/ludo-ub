@@ -193,3 +193,49 @@ a:hover {
 .ice a:hover {
     border-bottom: 2px solid #404040;
 }
+
+.banner::-webkit-scrollbar {
+    display: none;
+}
+
+.banner {
+    transition: .5s;
+    overflow: scroll;
+    width: 100%;
+    white-space: nowrap;
+    position: fixed;
+    padding-left: 3em;
+    z-index: 1000;
+}
+
+.banner.shaded {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.banner.inverted {
+    color: white;
+}
+
+.banner.shaded.inverted {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.section {
+    cursor: pointer;
+    transition: .2s;
+    display: inline-block;
+    padding: 1em;
+    border-bottom: 2px solid transparent;
+    opacity: 0.5;
+    font-weight: 400;
+}
+
+.section:hover{
+    border-bottom: 2px solid black;
+    opacity: 0.75;
+}
+
+.section.highlighted {
+    transform: scale(1.1);
+    opacity: 1;
+}

@@ -12,19 +12,27 @@
 </head>
 <body>
 
-<div class="area ice">
+<div class="banner" id="banner">
+    <div class="section highlighted" id="section1">¡Bienvenidos a Ludo;UB!</div>
+    <div class="section" id="section2">Dónde (y cuándo) encontrarnos</div>
+    <div class="section" id="section3">¡Tenemos los juegos que te gustan!</div>
+    <div class="section" id="section4">¿Puedo colarme sin ser miembro?</div>
+    <div class="section" id="section5">¡Espíanos un poco!</div>
+</div>
+
+<div class="area ice" id="area1" style="padding-top: 30px">
 
     <div class="inner">
 
         <div class="column">
 
             <div class="title">¡Bienvenidos a Ludo;UB!</div>
-            <p>Ludo;UB es una asociación de juegos de mesa de la Universitat de Barcelona.<br> Juega con nosotros 1!!1!!</p>
+            <p>Ludo;UB es una asociación de juegos de mesa de la Universitat de Barcelona.<br> ¡Juega con nosotros 1!!1!!</p>
 
             <ul class="fa-ul social">
 
-                <li><a href="https://goo.gl/forms/OrkhpNp70k6JnrC32"><i class="fa-li fa fa-link"></i>Únete a nosotros!</a></li>
-                <li><a href="https://drive.google.com/file/d/1tyJL7c7A8jxwDv2k9JjeCOwAXRZiFXHN/view?usp=sharing"><i class="fa-li fa fa-file"></i>Carta de la asociación</a></li>
+                <li><a href="https://goo.gl/forms/OrkhpNp70k6JnrC32"><i class="fa-li fa fa-link"></i>¡Únete a nosotros!</a></li>
+                <li><a href="https://drive.google.com/file/d/1tyJL7c7A8jxwDv2k9JjeCOwAXRZiFXHN/view?usp=sharing"><i class="fa-li fa fa-file"></i>Carta de la presentación</a></li>
 
             </ul>
 
@@ -34,14 +42,14 @@
 
 </div>
 
-<div class="area lawrencium left">
+<div class="area lawrencium left" id="area2">
 
     <div class="inner">
 
         <div class="column">
 
             <div class="title">Dónde (y cuándo) encontrarnos</div>
-            <p>Pues en la facultad de matemáticas y informática de la UB. En el Edificio Histórico, vamos. El de Plaça Universitat, por si aún no cuaja.</p>
+            <p>Pues en la Facultad de Matemáticas e Informática de la UB. En el Edificio Histórico, vamos. El de Plaça Universitat, por si aún no cuaja.</p>
 
             <ul class="fa-ul social">
 
@@ -50,7 +58,7 @@
 
             </ul>
 
-            Nos encontrarás en el Hotel de Asociaciones
+            Nos encontrarás en el Hotel de Asociaciones estos dias:
 
             <ul class="fa-ul social">
                 <li><a href="https://docs.google.com/spreadsheets/d/1gx92pool92LW5H0SOd0k6eCGXiNo4uomEIRUsr4Snss/edit?usp=sharing"><i class="fa-li fa fa-file"></i>Horarios actualizados</a></li>
@@ -62,14 +70,14 @@
 
 </div>
 
-<div class="area mauve left">
+<div class="area mauve left" id="area3">
 
     <div class="inner">
 
         <div class="column">
 
             <div class="title">¡Tenemos los juegos que te gustan!</div>
-            <p>A no ser que tengas muy mal gusto. Tenemos de lo más normal (Código Secreto, Cards Against Humanity, una baraja española como dios manda) a lo más friki (¡con sesiones de rol planificadas!)</p>
+            <p>A no ser que tengas muy mal gusto. Tenemos de lo más normal (Código Secreto, Cards Against Humanity, una baraja de cartas de toda la vida) a lo más friki (¡con sesiones de rol planificadas!)</p>
 
             <ul class="fa-ul social">
                 <li><a href="https://docs.google.com/document/d/1bYIYRSmIIYZt9XBAgt-qeEGFBlBr3-Lt8F0VaKGiaCE/edit?usp=sharing"><i class="fa-li fa fa-file"></i>Lista de juegos actualizada</a></li>
@@ -81,7 +89,7 @@
 
 </div>
 
-<div class="area pinot left">
+<div class="area pinot left" id="area4">
 
     <div class="inner">
 
@@ -89,7 +97,8 @@
 
             <div class="title">¿Puedo colarme sin ser miembro?</div>
 
-            <p>¡Y tanto! Si no, no pondríamos esta sección. Quedaría muy mal.<br>Mientras te portes bien, estás invitado.</p>
+            <p>¡Y tanto! Si no, no pondríamos esta sección. Quedaría muy mal.</p>
+            <p>Mientras te portes bien, estás invitado.</p>
 
         </div>
 
@@ -97,7 +106,7 @@
 
 </div>
 
-<div class="area midnight left">
+<div class="area midnight left" id="area5">
 
     <div class="inner">
 
@@ -113,13 +122,69 @@
 
             </ul>
 
-            <p>Psst: también puedes mandarnos preguntas y sugerencias.</p>
+            <p>Psst: también puedes mandarnos preguntas y sugerencias a <a href="mailto:ludo@ub.edu">ludo@ub.edu</a></p>
 
         </div>
 
     </div>
 
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+    var banner = $("#banner");
+    var section1 = $("#section1");
+    var section2 = $("#section2");
+    var section3 = $("#section3");
+    var section4 = $("#section4");
+    var section5 = $("#section5");
+
+    var area1 = $("#area1");
+    var area2 = $("#area2");
+    var area3 = $("#area3");
+    var area4 = $("#area4");
+    var area5 = $("#area5");
+
+    var map = [{"area": area1, "section": section1},
+        {"area": area2, "section" : section2},
+        {"area": area3, "section" : section3},
+        {"area": area4, "section" : section4},
+        {"area": area5, "section" : section5}];
+
+    var scrollTop = 0;
+
+    var previous = map[0];
+    var current = map[0];
+
+    $(window).scroll(function() {
+
+        scrollTop = $(window).scrollTop();
+
+        if (scrollTop > 10) {
+            banner.addClass("shaded");
+        } else {
+            banner.removeClass("shaded");
+        }
+
+        map.forEach(function(it) {
+
+            if (scrollTop > it.area.offset().top && scrollTop < it.area.offset().top + it.area.height()) {
+                previous = current;
+                current = it;
+            }
+
+        });
+
+        if (current != previous) {
+            previous.section.removeClass("highlighted");
+            current.section.addClass("highlighted");
+        }
+
+    });
+
+</script>
 
 </body>
 </html>
