@@ -220,11 +220,14 @@ a:hover {
 }
 
 .banner.inverted {
-    opacity: .15;
     color: white;
 }
 
-.banner.inverted:hover {
+.banner.hiding {
+    opacity: .15;
+}
+
+.banner.hiding:hover {
     opacity: 1;
 }
 
@@ -234,7 +237,7 @@ a:hover {
 
 .section {
     cursor: pointer;
-    transition: .2s;
+    transition: transform .2s;
     display: inline-block;
     padding: 1em;
     border-bottom: 2px solid transparent;
