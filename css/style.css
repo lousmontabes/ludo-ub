@@ -283,3 +283,8 @@ a:hover {
 .card.rotated-right {
     transform: rotate(10deg);
 }
+
+.card .description {
+    padding: 1em 0;
+    color: lightgray;
+}

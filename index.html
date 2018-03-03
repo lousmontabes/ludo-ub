@@ -9,6 +9,20 @@
     <link rel="stylesheet" href="libraries/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+
+        @media (max-width: 950px) {
+            .card {
+                bottom: -18em;
+            }
+
+            .card:hover {
+                bottom: -15em;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
 
@@ -40,9 +54,18 @@
 
     </div>
 
-    <div class="card rotated-left" style="right:100px" onclick="scrollToArea(4)">¿Tengo que ser miembro?</div>
-    <div class="card" style="right:60px" onclick="scrollToArea(3)">¿Qué juegos tenemos?</div>
-    <div class="card rotated-right" style="right:20px" onclick="scrollToArea(2)">¿Dónde estamos?</div>
+    <div class="card rotated-left" style="right:100px" onclick="scrollToArea(4)">
+        ¿Tengo que ser miembro?
+        <div class="description">Muestra las ventajas de ser miembro.</div>
+    </div>
+    <div class="card" style="right:60px" onclick="scrollToArea(3)">
+        ¿Qué juegos tenemos?
+        <div class="description">Al usar esta carta, se revelará la lista de juegos disponibles para jugar.</div>
+    </div>
+    <div class="card rotated-right" style="right:20px" onclick="scrollToArea(2)">
+        ¿Dónde estamos?
+        <div class="description">Muestra la ubicación de las quedadas de Ludo;UB, además de el horario en que se producen.</div>
+    </div>
 
 </div>
 
@@ -189,9 +212,7 @@
 
         $('html, body').animate({
             scrollTop: $("#area" + i).offset().top
-        }, 300).complete(function(){
-            current = $("section" + i)
-        });
+        }, 300);
 
     }
 
