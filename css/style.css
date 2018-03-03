@@ -209,7 +209,7 @@ a:hover {
 }
 
 .banner.shaded {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(207, 222, 243, .95)
 }
 
 .banner.inverted {
@@ -238,4 +238,13 @@ a:hover {
 .section.highlighted {
     transform: scale(1.1);
     opacity: 1;
+}
+
+.section.inverted:hover {
+    border-bottom: 2px solid white;
+    opacity: 0.75;
+}
+
+.area {
+    height: 100vw;
 }

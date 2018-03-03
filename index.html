@@ -13,11 +13,11 @@
 <body>
 
 <div class="banner" id="banner">
-    <div class="section highlighted" id="section1">¡Bienvenidos a Ludo;UB!</div>
-    <div class="section" id="section2">Dónde (y cuándo) encontrarnos</div>
-    <div class="section" id="section3">¡Tenemos los juegos que te gustan!</div>
-    <div class="section" id="section4">¿Puedo colarme sin ser miembro?</div>
-    <div class="section" id="section5">¡Espíanos un poco!</div>
+    <div class="section highlighted" id="section1" onclick="scrollToArea(1)">¡Bienvenidos a Ludo;UB!</div>
+    <div class="section" id="section2" onclick="scrollToArea(2)">Dónde (y cuándo) encontrarnos</div>
+    <div class="section" id="section3" onclick="scrollToArea(3)">¡Tenemos los juegos que te gustan!</div>
+    <div class="section" id="section4" onclick="scrollToArea(4)">¿Puedo colarme sin ser miembro?</div>
+    <div class="section" id="section5" onclick="scrollToArea(5)">¡Espíanos un poco!</div>
 </div>
 
 <div class="area ice" id="area1" style="padding-top: 30px">
@@ -97,7 +97,7 @@
 
             <div class="title">¿Puedo colarme sin ser miembro?</div>
 
-            <p>¡Y tanto! Si no, no pondríamos esta sección. Quedaría muy mal.</p>
+            <p>¡Por supuesto! Si no, no pondríamos esta sección. Quedaría muy mal.</p>
             <p>Mientras te portes bien, estás invitado.</p>
 
         </div>
@@ -148,41 +148,48 @@
     var area5 = $("#area5");
 
     var map = [{"area": area1, "section": section1},
-        {"area": area2, "section" : section2},
-        {"area": area3, "section" : section3},
-        {"area": area4, "section" : section4},
-        {"area": area5, "section" : section5}];
+               {"area": area2, "section": section2},
+               {"area": area3, "section": section3},
+               {"area": area4, "section": section4},
+               {"area": area5, "section": section5}];
 
     var scrollTop = 0;
 
     var previous = map[0];
     var current = map[0];
 
+    var nSections = 5;
+    var totalHeight = $(document).height() - window.innerHeight + 200;
+
     $(window).scroll(function() {
 
         scrollTop = $(window).scrollTop();
 
         if (scrollTop > 10) {
-            banner.addClass("shaded");
+            banner.addClass("inverted");
         } else {
-            banner.removeClass("shaded");
+            banner.removeClass("inverted");
         }
 
-        map.forEach(function(it) {
-
-            if (scrollTop > it.area.offset().top && scrollTop < it.area.offset().top + it.area.height()) {
-                previous = current;
-                current = it;
-            }
-
-        });
+        current = map[Math.min(Math.floor(scrollTop / (totalHeight / nSections)), nSections - 1)];
 
         if (current != previous) {
             previous.section.removeClass("highlighted");
             current.section.addClass("highlighted");
+            previous = current;
         }
 
     });
+
+    function scrollToArea(i) {
+
+        $('html, body').animate({
+            scrollTop: $("#area" + i).offset().top
+        }, 300).complete(function(){
+            current = $("section" + i)
+        });
+
+    }
 
 </script>
 
