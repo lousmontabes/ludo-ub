@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Ludo;UB</title>
+
+    <link rel="stylesheet" href="libraries/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Karma" rel="stylesheet">
+
+    <style>
+        .inner {
+            min-height: auto;
+        }
+
+        .contents {
+            font-family: "Karma";
+        }
+
+        .contents a{
+            transition: .2s;
+            opacity: .5;
+            border-bottom: none;
+        }
+
+        .contents a:hover {
+            opacity: 1;
+            border-bottom: none;
+        }
+
+        .backdrop {
+            height: 100vh;
+        }
+
+        #curtain {
+            width: 100vw;
+            height: 100vh;
+            background: #E0EAFC;
+            position: absolute;
+            top: 0;
+        }
+
+        #curtain p {
+            padding: 2em;
+        }
+
+        .date {
+            display: inline;
+            font-size:12px;
+            border-bottom: 1px dotted #404040;
+        }
+
+        .categories {
+            display: inline;
+            background: #404040;
+            color: lightgrey;
+            padding: .3em .5em;
+            border-radius: 3px;
+            font-size:12px;
+        }
+
+        .categories i {
+            margin-right: .4em;
+        }
+
+        .area.blogpost {
+            border-bottom: 2px dashed #404040;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="curtain"><p>Cargando...</p></div>
+
+<div class="backdrop"></div>
+
+<div class="banner inverted" id="banner">
+    <a href="index.html"><div class="section" id="section1">¡Bienvenidos a Ludo;UB!</div></a>
+    <div class="section highlighted" id="section2" onclick="scrollToArea(2)">Blog</div>
+    <a href="index.html#area5"><div class="section" id="section5">Contáctanos</div></a>
+</div>
+
+<div class="area lawrencium" id="area1" style="padding-top: 30px">
+
+    <div class="inner">
+
+        <div class="column">
+
+            <div class="title" id="blog-title">...</div>
+            <p id="blog-description">...</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="posts" id="blog-posts">
+
+</div>
+
+<div id="dummy-post" style="display: none">
+
+    <div class="area ice left blogpost">
+
+        <div class="inner">
+
+            <div class="column">
+
+                <div class="title" id="blog-post-title">Post title</div>
+                <div class="info">
+
+                    <div class="date" id="blog-post-date">Post date</div>
+                    <div class="categories" id="blog-post-categories"></div>
+
+                </div>
+
+                <div class="contents" id="blog-post-contents">Post contents</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+
+    var blogTitle;
+    var blogDescription;
+    var blogPosts;
+
+    var curtainView = $("#curtain");
+
+    var titleView = $("#blog-title");
+    var descriptionView = $("#blog-description");
+    var postsView = $("#blog-posts");
+
+    var blogPostTitleView = $("#blog-post-title");
+    var blogPostContentsView = $("#blog-post-contents");
+    var blogPostDateView = $("#blog-post-date");
+    var blogPostCategoriesView = $("#blog-post-categories");
+    var blogPostCategoryView = $("#blog-post-category");
+
+    var dummyPost = $("#dummy-post");
+
+    var area1 = $("#area1");
+    var banner = $("#banner");
+
+    function parseRSS(url, callback) {
+
+        $.ajax({
+            url: 'https://api.rss2json.com/v1/api.json',
+            method: 'GET',
+            dataType: 'json',
+            data: {
+                rss_url: url,
+                api_key: 'gcgeyhfhk94c4xxbobbbwf7qobtmiavuolbnfwip',
+                count: 10
+            }
+        }).done(function (response) {
+            if(response.status != 'ok'){ throw response.message; }
+            callback(response);
+            curtainView.css("display", "none");
+        });
+
+    }
+
+    parseRSS("https://ludoub.wordpress.com/rss", function(response) {
+        blogTitle = response.feed.title;
+        blogDescription = response.feed.description;
+        blogPosts = response.items;
+
+        updateView();
+
+    });
+
+    function updateView() {
+
+        titleView.html(blogTitle);
+        descriptionView.html(blogDescription);
+
+        var postsHtml = "";
+
+        blogPosts.forEach(function(post){
+            postsHtml = postsHtml + generatePostHtml(post);
+        });
+
+        postsView.html(postsHtml);
+
+    }
+
+    function generatePostHtml(post) {
+        blogPostTitleView.html(post.title);
+        blogPostContentsView.html(post.content);
+        blogPostDateView.html(post.pubDate);
+
+        post.categories.forEach(function(category){
+           blogPostCategoriesView.html('<i class="fa fa-tag"></i>' + category);
+        });
+
+        return dummyPost.html();
+    }
+
+    $(window).scroll(function() {
+
+        scrollTop = $(window).scrollTop();
+
+        if (scrollTop > 10) {
+            banner.addClass("hiding");
+        } else {
+            banner.removeClass("hiding");
+        }
+
+        if (scrollTop > area1.height()) {
+            banner.removeClass("inverted");
+        } else {
+            banner.addClass("inverted");
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
