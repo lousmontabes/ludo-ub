@@ -19,6 +19,10 @@
             .card:hover {
                 bottom: -15em;
             }
+
+            .area.right {
+                float: none;
+            }
         }
 
     </style>
@@ -54,20 +58,9 @@
 
     </div>
 
-    <div class="card rotated-left" style="right:100px" onclick="scrollToArea(4)">
-        ¿Tengo que ser miembro?
-        <div class="description">Muestra las ventajas de ser miembro.</div>
-    </div>
-    <div class="card" style="right:60px" onclick="scrollToArea(3)">
-        ¿Qué juegos tenemos?
-        <div class="description">Al usar esta carta, se revelará la lista de juegos disponibles para jugar.</div>
-    </div>
-    <div class="card rotated-right" style="right:20px" onclick="scrollToArea(2)">
-        ¿Dónde estamos?
-        <div class="description">Muestra la ubicación de las quedadas de Ludo;UB, además de el horario en que se producen.</div>
-    </div>
-
 </div>
+
+<div class="backdrop"></div>
 
 <div class="area lawrencium left" id="area2">
 
@@ -155,6 +148,19 @@
 
     </div>
 
+</div>
+
+<div class="card rotated-left" id="card1" onclick="scrollToArea(4)">
+    ¿Tengo que ser miembro?
+    <div class="description">Muestra las ventajas de ser miembro.</div>
+</div>
+<div class="card" id="card2" onclick="scrollToArea(3)">
+    ¿Qué juegos tenemos?
+    <div class="description">Al usar esta carta, se revelará la lista de juegos disponibles para jugar.</div>
+</div>
+<div class="card rotated-right" id="card3" onclick="scrollToArea(2)">
+    ¿Dónde estamos?
+    <div class="description">Muestra la ubicación de las quedadas de Ludo;UB, además de el horario en que se producen.</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
