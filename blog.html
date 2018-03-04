@@ -173,7 +173,7 @@
 
     }
 
-    parseRSS("https://ludoub.wordpress.com/rss", function(response) {
+    parseRSS("http://ludoub.wordpress.com/rss", function(response) {
         blogTitle = response.feed.title;
         blogDescription = response.feed.description;
         blogPosts = response.items;
