@@ -32,8 +32,8 @@
       <file leaf-file-name="blog.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="4" column="124" lean-forward="false" selection-start-line="4" selection-start-column="124" selection-end-line="4" selection-end-column="124" />
+            <state relative-caret-position="150">
+              <caret line="10" column="69" lean-forward="false" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -183,7 +183,7 @@
       <updated>1519986717398</updated>
       <workItem from="1519986718577" duration="4847000" />
       <workItem from="1519994893574" duration="17107000" />
-      <workItem from="1520194922624" duration="5335000" />
+      <workItem from="1520194922624" duration="5682000" />
     </task>
     <task id="LOCAL-00001" summary="Minor fixes.&#10;Added banner.">
       <created>1520086014858</created>
@@ -262,11 +262,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520201115628</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Made blog.html adapt to smaller screens">
+      <created>1520201273623</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1520201273623</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27289000" />
+    <option name="totallyTimeSpent" value="27636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -310,7 +317,8 @@
     <MESSAGE value="Changed texts" />
     <MESSAGE value="Temporary fix for backdrop showing past document limits in Safari" />
     <MESSAGE value="Added blog and changed banner nav links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added blog and changed banner nav links" />
+    <MESSAGE value="Made blog.html adapt to smaller screens" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made blog.html adapt to smaller screens" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -373,8 +381,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="4" column="124" lean-forward="false" selection-start-line="4" selection-start-column="124" selection-end-line="4" selection-end-column="124" />
+        <state relative-caret-position="150">
+          <caret line="10" column="69" lean-forward="false" selection-start-line="10" selection-start-column="69" selection-end-line="10" selection-end-column="69" />
           <folding>
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
