@@ -214,8 +214,8 @@ a:hover {
     width: 100%;
     white-space: nowrap;
     position: fixed;
-    padding-left: 3em;
     z-index: 1000;
+    overflow-y: hidden;
 }
 
 .banner.shaded {
@@ -228,6 +228,16 @@ a:hover {
 
 .banner.hiding {
     opacity: .15;
+    background: #E0EAFC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.banner.inverted.hiding {
+    opacity: .15;
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, rgba(36, 36, 62, 1), rgba(48, 43, 99, 1));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, rgba(36, 36, 62, 1), rgba(48, 43, 99, 1)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .banner.hiding:hover {

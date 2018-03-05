@@ -73,16 +73,47 @@
             text-align: justify;
         }
 
+        .banner-spacer {
+            width: 3em;
+            display: inline-block;
+        }
+
     </style>
 
 </head>
 <body>
 
-<div id="curtain"><p>Cargando...</p></div>
+<div id="curtain">
+
+    <div class="area lawrencium">
+
+        <div class="inner">
+
+            <div class="column">
+
+                <div class="title"></div>
+                <p></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="area preview">
+        <div class="inner preview">
+            <div class="column preview">
+
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <div class="backdrop"></div>
 
 <div class="banner inverted" id="banner">
+    <div class="banner-spacer"></div>
     <a href="index.html"><div class="section" id="section1">¡Bienvenidos a Ludo;UB!</div></a>
     <div class="section highlighted" id="section2" onclick="scrollToArea(2)">Blog</div>
     <a href="index.html#area5"><div class="section" id="section5">Contáctanos</div></a>
@@ -94,8 +125,8 @@
 
         <div class="column">
 
-            <div class="title" id="blog-title">...</div>
-            <p id="blog-description">...</p>
+            <div class="title" id="blog-title"></div>
+            <p id="blog-description"></p>
 
         </div>
 
@@ -177,15 +208,6 @@
 
     }
 
-    parseRSS("http://ludoub.wordpress.com/rss", function(response) {
-        blogTitle = response.feed.title;
-        blogDescription = response.feed.description;
-        blogPosts = response.items;
-
-        updateView();
-
-    });
-
     function updateView() {
 
         titleView.html(blogTitle);
@@ -228,6 +250,15 @@
         } else {
             banner.addClass("inverted");
         }
+
+    });
+
+    parseRSS("https://ludoub.wordpress.com/rss", function(response) {
+        blogTitle = response.feed.title;
+        blogDescription = response.feed.description;
+        blogPosts = response.items;
+
+        updateView();
 
     });
 
