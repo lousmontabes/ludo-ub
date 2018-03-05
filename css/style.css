@@ -329,3 +329,8 @@ a:hover {
     height: 2000px;
     top: 0;
 }
+
+.banner-spacer {
+    width: 3em;
+    display: inline-block;
+}
